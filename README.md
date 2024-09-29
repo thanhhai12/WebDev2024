@@ -13,4 +13,4 @@ Student Info
 * Name: *Do Cong Tuan Hung*
 * ID: *22BI13181*
 * Group ID: *13*
-* Project Name: *Your Project Name here*
+* Project Name: *Content Management System (CMS)*
