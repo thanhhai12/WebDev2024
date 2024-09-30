@@ -18,4 +18,4 @@ Student Info
   - *To Thanh Hai - 22BI13148*
   - *Pham Hoang Duong - 22BI13115*
 * Group ID: *13*
-* Project Name: *Your Project Name here*
+* Project Name: *Content Management System (CMS)*
