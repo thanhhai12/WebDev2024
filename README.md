@@ -10,7 +10,12 @@ Students are expected to:
 Student Info
 =======================
 
-* Name: *Do Cong Tuan Hung*
-* ID: *22BI13181*
+* Nembers: 
+  - *Do Cong Tuan Hung - 22BI13181* (leader)
+  - *Nguyen Dung - 22BI13104*
+  - *Nguyen Dinh Hai - 22BI13146*
+  - *Trinh Duc Anh - 22BI13043*
+  - *To Thanh Hai - 22BI13148*
+  - *Pham Hoang Duong - 22BI13115*
 * Group ID: *13*
 * Project Name: *Your Project Name here*
