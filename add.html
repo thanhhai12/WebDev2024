@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Simple CMS</title>
+    <link rel="stylesheet" href="add.css">
+    <link rel="stylesheet" href="chatbot.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="main-header">
+        <div class="logo">
+            <!-- Add onclick event to logo image -->
+            <img src="nokotan.png" alt="Logo" class="logo-img" onclick="toggleNav()">
+        </div>
+
+    
+
+        <div class="header-buttons">
+            <button class="set-btn" onclick="goToSettings()"><img src="setting_button.png"></button>
+            <button class="sp-btn" onclick="goToSupport()"><img src="support.png"></button>
+            <button class="pro-btn" onclick="goToProfile()"><img src="profile.png"></button>
+        </div>
+    </header>
+
+    <!-- First Container -->
+    <div class="container1" id="title-container">
+        <div class="container-header">
+            <h1>Website Content Management System</h1>
+        </div>    
+
+    <!-- Second Container (Upload Section) -->
+    <div class="container2" id="doc-container" style="display: none;">
+        <div class="upload-preview-image">
+            <img src="upload_icon_large.png" alt="Upload Data">
+            <h3>Upload Document</h3>
+            <p>Select a file to upload as your Document</p>
+            <button type="button" id="uploadFilesBtn" class="upload-files-btn">Upload Files</button>
+        </div>
+        <input type="file" id="fileInput" style="display: none;" />
+        <button class="chatbot-btn" onclick="openChatbot()"><img src="ai.png"></button>
+    </div>
+
+    <!-- Third Container -->
+    <div class="container3" id="final-container" style="display: none;">
+        <div class="upload-preview-gif">
+            <img src="upload_image.gif" alt="A fun GIF" width="300" height="300">
+            <h3>Upload Document</h3>
+            <p>Select a file to upload as your Image</p>
+            <button type="button" id="UpLoadImage" class="upload-image-btn">Upload Image</button>
+        </div>
+        <button class="chatbot-btn" onclick="openChatbot()"><img src="ai.png"></button>
+    </div>
+
+    <!-- Fourth Container (Summary Section) -->
+    <div class="container4" id="summary-container" style="display: none;">
+        <h2>Summary</h2>
+        <p><strong>Title:</strong> <span id="summary-title"></span></p>
+        <p><strong>Content:</strong> <span id="summary-content"></span></p>
+
+        <!-- Display the uploaded document content in a scrollable container -->
+        <div>
+            <h3>Uploaded Document Content:</h3>
+            <div id="summary-file-content" class="scrollable-container"></div> <!-- Scrollable container for the document -->
+        </div>
+
+        <!-- Display the uploaded image -->
+        <div>
+            <h3>Uploaded Image:</h3>
+            <img id="summary-image" style="display: none;" alt="Uploaded Image" width="300">
+        </div>
+        <button class="chatbot-btn" onclick="openChatbot()"><img src="ai.png"></button>
+    </div>
+
+    <!-- Footer Section for Navigation -->
+    <footer class="footer-nav">
+        <div class="footer-buttons">
+            <button class="prev-btn" onclick="goToPreviousContainer()" style="display: none;">Previous</button>
+            <button class="next-btn" onclick="goToNextContainer()" style="display: none;">Next</button>
+        </div>
+    </footer>
+
+    <!-- Right Side Navigation (Chatbot) -->
+    <div id="chatbot-nav" class="chatbot-nav">
+        <!-- Chatbot Header -->
+        <div class="chatbot-header">
+            <a href="javascript:void(0)" class="close-btn" onclick="closeChatbot()">&times;</a>
+            <h2>Ask Me Anything!</h2>
+        </div>
+
+        <!-- Chatbot Content -->
+        <div class="chatbot-content" id="chatbot-content">
+            <div class="bot-message">Hello! How can I assist you today?</div>
+        </div>
+
+        <!-- Chatbot Footer (Input) -->
+        <div class="chatbot-footer">
+            <input type="text" id="user-input" placeholder="Type your question..." onkeydown="if(event.key === 'Enter') sendMessage()">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <script src="add.js"></script>
+    <script src="chatbot.js"></script>
+    <script src="home.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+</body>
+</html>

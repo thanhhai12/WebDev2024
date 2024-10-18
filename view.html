@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Document</title>
+    <link rel="stylesheet" href="view.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script> <!-- Include SheetJS -->
+</head>
+<body>
+
+    <header class="main-header">
+        <h1 id="fileTitle">File Title</h1>
+        <button class = "vs-btn" id="visualizeButton" style="display: none;" onclick="visualizeFile()">Visualize</button>
+    </header>
+
+    <div class="content-container">
+        <div class="content-box" id="fileContent"></div> 
+    </div>
+
+    <button class = "back-btn" onclick="goBack()">Back</button>
+
+    <script>
+        function renderXlsxAsTable(data) {
+            const workbook = XLSX.read(data, { type: 'array' }); // Read as array
+            const sheetName = workbook.SheetNames[0]; // Get the first sheet
+            const sheet = workbook.Sheets[sheetName];
+            const htmlTable = XLSX.utils.sheet_to_html(sheet, { header: "" }); // Convert sheet to HTML
+            document.getElementById('fileContent').innerHTML = htmlTable; // Insert HTML table into content
+        }
+
+        // Load file content from localStorage and render accordingly
+        document.addEventListener('DOMContentLoaded', function() {
+            const params = new URLSearchParams(window.location.search);
+            const fileName = params.get('file');
+            document.getElementById('fileTitle').textContent = fileName;
+
+            const fileContent = localStorage.getItem(fileName);
+
+            if (fileName.endsWith('.xlsx')) {
+                document.getElementById('visualizeButton').style.display = 'block'; // Show the visualize button
+                if (fileContent) {
+                    // Convert Base64 string back to binary
+                    const binaryString = atob(fileContent); // Decode Base64
+                    const arrayBuffer = new Uint8Array(binaryString.length); // Create a Uint8Array
+                    for (let i = 0; i < binaryString.length; i++) {
+                        arrayBuffer[i] = binaryString.charCodeAt(i); // Convert binary string to byte array
+                    }
+                    renderXlsxAsTable(arrayBuffer); // Pass ArrayBuffer to render
+                } else {
+                    document.getElementById('fileContent').textContent = 'File is empty or corrupted.';
+                }
+            } else {
+                // For other file types, just display the content
+                document.getElementById('fileContent').textContent = fileContent ? fileContent : 'File is empty.';
+            }
+        });
+
+        // Function to visualize the file
+        function visualizeFile() {
+            const params = new URLSearchParams(window.location.search);
+            const fileName = params.get('file');
+            window.location.href = `excel.html?file=${encodeURIComponent(fileName)}`; // Redirect to excel.html
+        }
+
+        // Go back to the list page
+        function goBack() {
+            window.location.href = 'document.html'; 
+        }
+    </script>
+</body>
+</html>

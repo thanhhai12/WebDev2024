@@ -1,0 +1,79 @@
+/* Global styles */
+body {
+    background-color: #f0f0f0; 
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #2e502c;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: px;
+    background-color:#808481; 
+    padding: 20px;
+    text-align: left;
+}
+.main-header h1 {
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+}
+
+/* File content display container */
+.content-container {
+    max-width: 1500px; 
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 20px;
+    overflow-y: auto;
+}
+
+/* Box for displaying the content */
+.content-box {
+    background-color: #d6d3d3; 
+    padding: 20px;
+    border-radius: 20px;
+    white-space: pre-wrap; /* Keep the formatting of the text */
+    word-wrap: break-word; 
+    height: 550px;
+    overflow-y: auto; 
+    font-size: 20px; 
+    line-height: 1.6; 
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1); 
+}
+
+
+.back-btn {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.vs-btn {
+    background-color: rgb(90, 90, 90);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 20px;
+    float:right;
+}
+.vs-btn:hover {
+    background-color: #303030;
+    color:white;
+}
+
+.back-btn:hover {
+    background-color: #303030;
+    color:white;
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="add.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="main-header">
+        <div class="back">      
+            <img src="back.png" class="back-btn" onclick="goToHome()">
+        </div>
+
+      
+
+        <div class="header-buttons">
+            <button class="set-btn" onclick="goToSettings()"><img src="setting_button.png"></button>
+        </div>
+    </header>
+
+    <div class="contact-container">
+        <form action="https://api.web3forms.com/submit" method="POST" class="contact-left">
+            <div class="contact-left-tittle">
+                <h2>What is your problem?</h2>
+                <hr>
+            </div>
+            <input type="hidden" name="access_key" value="69e7a8ff-1370-4df7-b747-3cd085924c11">
+            <input type="text" name="name" placeholder=" Kimi no Na wa? 君の名は。" class="contact-inputs" required>
+            <input type="email" name="email" placeholder="Your email" class="contact-inputs" required>
+            <textarea name="message" placeholder="Please enter your problem" class="contact-inputs" required></textarea>
+            <button type="submit">Submit <img src="arrow_icon.png" alt=""></button>
+        </form>
+
+        <div class="contact-right">
+            <video autoplay loop muted class="contact-video">
+                <source src="nokotan.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+
+    <script src="contact.js"></script>
+    <script src="add.js"></script>
+</body>
+</html>
