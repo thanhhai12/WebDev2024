@@ -1,0 +1,86 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Simple CMS</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="add.css">
+    <link rel="stylesheet" href="excel.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script> <!-- Required in order to use readExcelHeaders and processExcel  -->
+
+
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo">
+            <img src="nokotan.png" alt="Logo" class="logo-img" onclick="toggleNav()">
+        </div>
+        <div class="header-buttons">
+            <button class="set-btn" onclick="goToSettings()"><img src="setting_button.png"></button>
+            <button class="sp-btn" onclick="goToSupport()"><img src="support.png"></button>
+            <button class="pro-btn" onclick="goToProfile()"><img src="profile.png"></button>
+        </div>
+    </header>
+
+    <div id="side-nav" class="side-nav">
+        <div class="side-nav-header">
+            <a href="javascript:void(0)" class="close-btn" onclick="closeNav()">&times;</a>
+            <h2>Available Content</h2>
+        </div>
+        <div class="side-nav-content">
+            <a href="#" onclick="goToHome()">Home</a>
+            <a href="#" onclick="goToPost()">Post</a>
+            <a href="#" onclick="goToMedia()">Media Content</a>
+            <a href="#" onclick="goToDocument()">Document Content</a>
+            <a href="#" onclick="goToShared()">Shared</a>
+            <a href="#" onclick="goToVisualize()">Visualization Dataset</a>
+        </div>
+
+        <div class="side-nav-footer">
+            <p>&copy; 2024 Simple CMS</p>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <h1>Dataset Visualization Extension</h1>
+        <div class="control-panel">
+            <div class="file-input">
+                <label for="excelFile" class="file-label">Browse Dataset</label>
+                <input type="file" id="excelFile" accept=".xlsx, .xls" onchange="readExcelHeaders()">
+            </div>
+            <div class="chart-params">
+                <select id="xAxis" disabled><option>Select X-Axis</option></select>
+                <select id="yAxis" disabled><option>Select Y-Axis</option></select>
+                <input class = "limit" type="number" id="rowLimit" placeholder="Row Limit">
+            </div>
+            <button class = "excel-btn" onclick="processExcel()" id="generateBtn" disabled>Generate Charts</button>
+        </div>
+        <div class="chart-container">
+            <div class="chart-wrapper">
+                <canvas id="lineChart"></canvas>
+            </div>
+            <div class="chart-wrapper">
+                <canvas id="pieChart"></canvas>
+            </div>
+            <div class="chart-wrapper">
+                <canvas id="barChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+
+       
+    <footer class="footer-nav">
+    </footer>
+
+    <script src="excel.js"></script>
+    <script src="home.js"></script>
+    <script src="add.js"></script>
+    
+</body>
+</html>
