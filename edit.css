@@ -1,0 +1,100 @@
+/* Global styles */
+body {
+    background-color: #f0f0f0; 
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header style */
+.main-header {
+    background-color: #808481; 
+    padding: 20px;
+    text-align: left;
+}
+
+.main-header h1 {
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+}
+
+/* File content display container */
+.content-container {
+    max-width: 1500px; 
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white; 
+    border-radius: 20px;
+    overflow-y: auto; 
+}
+
+/* Box for displaying the content */
+.content-box {
+    background-color: #d6d3d3; 
+    padding: 20px;
+    border-radius: 20px;
+    white-space: pre-wrap; 
+    word-wrap: break-word; 
+    height: 550px; 
+    overflow-y: auto; 
+    font-size: 20px; 
+    line-height: 1.6; 
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+.button-container {
+    position: relative;
+    width: 100%;
+    margin-top: 50px;
+}
+
+/* Cancel  Button */
+.cancel-btn {
+    padding: 10px 20px;
+    background-color: #f44336;
+    font-size: large;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s; 
+    position: absolute;
+    bottom: 0;
+    left: 0; 
+    margin-left: 0px; 
+    margin-bottom: 0px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cancel-btn:hover {
+    background-color: #c42d2d; 
+    color: rgb(255, 255, 255);
+    transform: scale(1.1);
+    transition: 0.4s;
+}
+/* Save Button */
+.save-btn {
+    padding: 10px 20px;
+    background-color: #000000; 
+    font-size: large;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s; 
+    position: absolute;
+    bottom: 0;
+    right: 0; 
+    margin-right: 0px; 
+    margin-bottom: 0px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+.save-btn:hover {
+    background-color: #3abc1dce;
+    color: rgb(255, 255, 255);
+    transform: scale(1.1); 
+    transition: 0.4s;
+}

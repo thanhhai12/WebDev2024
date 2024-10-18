@@ -1,0 +1,28 @@
+/* Container to align the plus button and chatbot button */
+.button-container {
+    position: fixed;
+    bottom: 100px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center; /* Center the buttons horizontally */
+    gap: 20px; /* Space between the buttons */
+}
+
+/* Style for the plus button */
+.create-btn {
+    background-color: #333;
+    border-radius: 5px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: white;
+    display: block;
+}
+
+.create-btn:hover {
+    background-color: #555;
+}
+
+
