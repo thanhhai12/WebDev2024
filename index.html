@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Simple CMS</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="chatbot.css">
+    <link rel="stylesheet" href="add.css">
+    <link rel="stylesheet" href="newpost-btn.css">
+    <link rel="stylesheet" href="popup.css">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header class="main-header">
+        <div class="logo">
+            <img src="nokotan.png" alt="Logo" class="logo-img" onclick="toggleNav()">
+        </div>
+
+        <div class="header-buttons">
+            <button class="set-btn" onclick="goToSettings()"><img src="setting_button.png"></button>
+            <button class="sp-btn" onclick="goToSupport()"><img src="support.png"></button>
+            <button class="pro-btn" onclick="goToProfile()"><img src="profile.png"></button>
+        </div>
+    </header>
+
+    <!-- Left Side Navigation -->
+    <div id="side-nav" class="side-nav">
+        <div class="side-nav-header">
+            <a href="javascript:void(0)" class="close-btn" onclick="closeNav()">&times;</a>
+            <h2>Available Content</h2>
+        </div>
+
+        <div class="side-nav-content">
+            <a href="#" onclick="goToHome()">Home</a>
+            <a href="#" onclick="goToPost()">Post</a>
+            <a href="#" onclick="goToMedia()">Media Content</a>
+            <a href="#" onclick="goToDocument()">Document Content</a>
+            <a href="#" onclick="goToShared()">Shared</a>
+            <a href="#" onclick="goToVisualize()">Visualization Dataset</a>
+        </div>
+
+        <div class="side-nav-footer">
+            <p>&copy; 2024 Simple CMS</p>
+        </div>
+    </div>
+
+    <div id="chatbot-nav" class="chatbot-nav">
+        <div class="chatbot-header">
+            <a href="javascript:void(0)" class="close-btn" onclick="closeChatbot()">&times;</a>
+            <h2>Ask Me Anything!</h2>
+        </div>
+
+        <div class="chatbot-content" id="chatbot-content">
+            <div class="bot-message">Hello! How can I assist you today?</div>
+        </div>
+
+        <div class="chatbot-footer">
+            <input type="text" id="user-input" placeholder="Type your question..."
+                onkeydown="if(event.key === 'Enter') sendMessage()">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="container-header">
+            <h1>Home</h1>
+        </div>
+        <img src="idea.gif" alt="A fun GIF" width="500" height="470">
+        <p>This is our homepage, please click the menu button at the top left to explore services</p>
+        <div class="button-container">
+            <button class="chatbot-btn" onclick="openChatbot()"><img src="ai.png"></button>
+            <button class="create-btn" id="newPostButton" title="Click here to make new post">New Post</button>
+        </div>
+        <div class="overlay" id="overlay"></div>
+        <div class="popup" id="popup">
+            <div class="popup-header">
+                <button class="cancel-btn" onclick="cancelPopup()">X</button>
+                <div class="title">New Post</div>
+                <button class="save-btn" onclick="saveContent()">Save</button>
+            </div>
+            <input type="text" id="title" placeholder="Title">
+            <textarea id="content" placeholder="What's on your mind..."></textarea>
+
+            <div class="popup-footer">
+                <input type="file" id="uploadImage" accept="image/*" style="display: none;">
+                <button class="upload-btn" onclick="document.getElementById('uploadImage').click()">Upload Image</button>
+                <span id="imageFileName"></span>
+            </div>
+        </div>
+    </div>
+    <footer class="footer-nav">
+        <div class="footer-buttons">
+            <button class="prev-btn" onclick="goToPreviousContainer()" style="display: none;">Previous</button>
+            <button class="next-btn" onclick="goToNextContainer()" style="display: none;">Next</button>
+        </div>
+    </footer>
+
+    <script src="home.js"></script>
+    <script src="chatbot.js"></script>
+    <script src="add.js"></script>
+    <script src="create_post.js"></script>
+    <script src="post_list.js"></script>
+</body>
+
+</html>
