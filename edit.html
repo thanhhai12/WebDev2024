@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Document</title>
+    <link rel="stylesheet" href="edit.css"> 
+    <script src="edit.js"></script>
+</head>
+<body>
+
+    <header class="main-header">
+        <h1 id="fileTitle">File Title</h1> 
+    </header>
+
+    <div class="content-container">
+        <div class="content-box" id="fileContent" contenteditable="true"></div> 
+        
+        <div class="button-container">
+            <button class="cancel-btn" onclick="Cancel()">Cancel</button> <!-- Cancel Button -->
+            <button class="save-btn" onclick="saveChanges()">Save Changes</button> <!--Save Changes Button -->
+        </div>
+    </div>
+
+
+</body>
+</html>

@@ -7,13 +7,18 @@
     <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="chatbot.css">
     <link rel="stylesheet" href="add.css">
-    <link rel="stylesheet" href="media.css">
+    <link rel="stylesheet" href="document.css">
+    <link rel="stylesheet" href="hide-menu.css">
 </head>
 <body>
+    <!-- Header Section -->
     <header class="main-header">
         <div class="logo">
+            <!-- Add onclick event to logo image -->
             <img src="nokotan.png" alt="Logo" class="logo-img" onclick="toggleNav()">
         </div>
+
+
         <div class="header-buttons">
             <button class="set-btn" onclick="goToSettings()"><img src="setting_button.png"></button>
             <button class="sp-btn" onclick="goToSupport()"><img src="support.png"></button>
@@ -21,11 +26,15 @@
         </div>
     </header>
 
+    <!-- Left Side Navigation -->
     <div id="side-nav" class="side-nav">
+        <!-- Side-nav Header -->
         <div class="side-nav-header">
             <a href="javascript:void(0)" class="close-btn" onclick="closeNav()">&times;</a>
             <h2>Available Content</h2>
         </div>
+
+        <!-- Side-nav Content -->
         <div class="side-nav-content">
             <a href="#" onclick="goToHome()">Home</a>
             <a href="#" onclick="goToPost()">Post</a>
@@ -35,48 +44,78 @@
             <a href="#" onclick="goToVisualize()">Visualization Dataset</a>
         </div>
 
+        <!-- Side-nav Footer -->
         <div class="side-nav-footer">
             <p>&copy; 2024 Simple CMS</p>
         </div>
     </div>
 
+    <!-- Right Side Navigation (Chatbot) -->
     <div id="chatbot-nav" class="chatbot-nav">
+        <!-- Chatbot Header -->
         <div class="chatbot-header">
             <a href="javascript:void(0)" class="close-btn" onclick="closeChatbot()">&times;</a>
             <h2>Ask Me Anything!</h2>
         </div>
+
+        <!-- Chatbot Content -->
         <div class="chatbot-content" id="chatbot-content">
             <div class="bot-message">Hello! How can I assist you today?</div>
         </div>
+
+        <!-- Chatbot Footer (Input) -->
         <div class="chatbot-footer">
             <input type="text" id="user-input" placeholder="Type your question..." onkeydown="if(event.key === 'Enter') sendMessage()">
             <button onclick="sendMessage()">Send</button>
         </div>
     </div>
 
-<div class="container">
-    <div class="container-header">
-        <h1>Media Gallery</h1>
 
-        <div class="filter-buttons">
-            <button onclick="filterMedia('all')">All</button>
-            <button onclick="filterMedia('image')">Images</button>
-            <button onclick="filterMedia('video')">Videos</button>
+    
+    <div class="container">
+        <div class="container-header">
+            <h1>List Document</h1>
+            <button class="upload-btn" onclick="triggerFileUpload()"><img src ="upload_icon.png"></button>
+            <button class = "trash-btn" id="go-to-trash" onclick="location.href='trash.html'"><img src = "trashbin.png"></button>
+            <input type="file" id="fileInput" accept=".txt,.xlsx" onchange="handleFileUpload()">
         </div>
+
+        <div class="file-container">
+            <table class="file-table" id="fileList">
+                <thead>
+                    <tr>
+                        <th>Upload Time</th>
+                        <th>File Name</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="fileList">
+                    <!-- Files will be injected here dynamically -->
+
+                   
+
+                    <div id="context-menu" class="context-menu">
+                        <ul>
+                            <li class="menu-option" data-action="view">View</li>
+                            <li class="menu-option" data-action="edit">Edit</li>
+                            <li class="menu-option" data-action="rename">Rename</li>
+                            <li class="menu-option" data-action="download">Download</li>
+                            <li class="menu-option" data-action="share">Share</li>
+                            <li class="menu-option" data-action="delete">Delete</li>
+                        </ul>
+                    </div>
+                </tbody>
+            </table>
+
+
+            
+        </div>
+        <button class="chatbot-btn" onclick="openChatbot()"><img src="ai.png"></button>
     </div>
 
-    <div class="upload-section">
-        <label for="media-upload" class="upload-label">Upload Media</label>
-        <input type="file" id="media-upload" accept="image/png, video/mp4" multiple onchange="handleFileUpload(event)">
-    </div>
-
-    <div class="media-container" id="media-container">
-    </div>
-
-    <button class="chatbot-btn" onclick="openChatbot()"><img src="ai.png"></button>
-</div>
 
 
+   
     <footer class="footer-nav">
         <div class="footer-buttons">
             <button class="prev-btn" onclick="goToPreviousContainer()" style="display: none;">Previous</button>
@@ -84,9 +123,26 @@
         </div>
     </footer>
 
+
     <script src="home.js"></script>
     <script src="chatbot.js"></script>
     <script src="add.js"></script>
-    <script src="media.js"></script>
+    <script src="document.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
