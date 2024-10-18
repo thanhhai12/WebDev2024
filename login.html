@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="container">
+        <div class="login-box">
+            <h2>Login</h2>
+            <p>Doesn't have an account yet? <a href="#">Sign Up</a></p>
+            <form>
+                <div class="input-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="you@example.com" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Password" required>
+                </div>
+                <div class="remember">
+                    <input type="checkbox" id="remember">
+                    <label for="remember">Remember account</label>
+                </div>
+                <button type="submit" class="login-btn">LOGIN</button>
+                <div class="forgot-pass">
+                    <a href="#">Forgot Password?</a>
+                </div>
+                <p>or login with</p>
+                <div class="social-login">
+                    <button class="google-btn">Google</button>
+                    <button class="github-btn">Github</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="login.js"></script>
+</body>
+</html>
