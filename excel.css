@@ -1,0 +1,115 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.control-panel {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.file-input {
+    margin-bottom: 15px;
+}
+
+.file-label {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #898989;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.file-label:hover {
+    background-color: #3f3f3f;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.chart-params {
+    display: flex;  
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.chart-params select {
+    flex: 1;
+    height: 40px;
+    margin-top:10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-align: center;
+}
+
+ .chart-params input {
+    flex: 1;
+    height: 40px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.excel-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #9e9e9e;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.excel-btn :hover {
+    background-color: #007B9A;
+}
+
+.excel-btn :disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.chart-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.chart-wrapper {
+    flex-basis: calc(33.333% - 20px);
+    min-width: 300px;
+    height: 300px;
+    position: relative;
+}
+
+@media (max-width: 768px) {
+    .chart-wrapper {
+        flex-basis: 100%;
+    }
+}
