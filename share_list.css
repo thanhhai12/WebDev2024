@@ -1,0 +1,33 @@
+.file-shared-list-header {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    font-weight: bold;
+    padding: 10px;
+    border-bottom: 2px solid #ddd;
+}
+
+.file-shared-item {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    align-items: center;
+}
+
+.file-shared-item img {
+    width: 20px;
+    margin-right: 10px;
+}
+
+.file-shared-name {
+    display: flex;
+    align-items: center;
+}
+
+.shared-by, .share-date {
+    color: #777;
+}
+
+.file-shared-item:hover {
+    background-color: #f0f0f0;
+}
